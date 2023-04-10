@@ -1,1 +1,36 @@
 /*Welcome to the CSS file!*/
+
+body
+{
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+img
+{
+    width: 100%;
+}
+
+/*Navbar*/
+.navbar.container .navbar
+{
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+
+    &:before
+    {
+        position: absolute;
+        content: "";
+        left: -10px;
+        height: 20px;
+        width: 20px;
+        background-color: #fff;
+        box-shadow: -2px -2px 8px -2px rgb(0 0 0 / 10%);
+        display: inline-block;
+        transform: rotate(45deg);
+        z-index: -9999;
+    }
+}

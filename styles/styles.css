@@ -1,1 +1,30 @@
-/*Welcome to the CSS file!*//*# sourceMappingURL=styles.css.map */
+/*Welcome to the CSS file!*/
+body {
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+img {
+  width: 100%;
+}
+
+/*Navbar*/
+.navbar.container .navbar {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+}
+.navbar.container .navbar:before {
+  position: absolute;
+  content: "";
+  left: -10px;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  box-shadow: -2px -2px 8px -2px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  transform: rotate(45deg);
+  z-index: -9999;
+}/*# sourceMappingURL=styles.css.map */
