@@ -146,6 +146,147 @@ a {
 	}
 }
 
+p {
+	color: darken($blue, 20%);
+	line-height: 1.8em;
+
+	&.caption {
+		color: $dark;
+		font-size: 13px;
+		text-align: center;
+		margin-top: 10px;
+	}
+}
+
+.accordion {
+	.accordion-item {
+		border: none;
+		box-shadow: 0px 0px 7px rgba(33, 150, 243, 0.3);
+		.accordion-header {
+			-webkit-background-clip: unset;
+			-webkit-text-fill-color: unset;
+			background: unset;
+
+			.accordion-button {
+				&:hover,
+				&:not(.collapsed) {
+					background: lighten($blue, 25%);
+					color: $light;
+				}
+				&:not(.collapsed) {
+					&:hover {
+						background: $blue;
+					}
+				}
+				&:focus {
+					box-shadow: unset;
+				}
+				color: $blue;
+				font-weight: 500;
+				transition: all 0.3s ease;
+			}
+		}
+	}
+}
+
+.rainbow-interests {
+	p {
+		&:nth-child(8n + 1) {
+			color: rgb(255, 0, 0);
+		}
+		&:nth-child(8n + 2) {
+			color: rgb(255, 154, 0);
+		}
+		&:nth-child(8n + 3) {
+			color: rgb(235, 192, 0);
+		}
+		&:nth-child(8n + 4) {
+			color: rgb(79, 220, 74);
+		}
+		&:nth-child(8n + 5) {
+			color: rgb(47, 201, 226);
+		}
+		&:nth-child(8n + 6) {
+			color: rgb(28, 127, 238);
+		}
+		&:nth-child(8n + 7) {
+			color: rgb(95, 21, 242);
+		}
+		&:nth-child(8n + 8) {
+			color: rgb(251, 7, 217);
+		}
+	}
+}
+
+.box-shadow {
+	box-shadow: 0px 0px 7px rgba(33, 150, 243, 0.3);
+}
+.rainbow-border {
+	&.border-radius {
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	border: double 0.5px transparent;
+	background-image: linear-gradient(white, white),
+		linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 0.5) 0%,
+			rgba(255, 154, 0, 0.5) 10%,
+			rgba(208, 222, 33, 0.5) 20%,
+			rgba(79, 220, 74, 0.5) 30%,
+			rgba(63, 218, 216, 0.5) 40%,
+			rgba(47, 201, 226, 0.5) 50%,
+			rgba(28, 127, 238, 0.5) 60%,
+			rgba(95, 21, 242, 0.5) 70%,
+			rgba(186, 12, 248, 0.5) 80%,
+			rgba(251, 7, 217, 0.5) 90%,
+			rgba(255, 0, 0, 0.5) 100%
+		);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+}
+
+table {
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	tr {
+		&:not(:last-child) {
+			th {
+				border-bottom: 1px solid $light;
+			}
+			td {
+				border-bottom: 1px solid lighten($blue, 35%);
+			}
+		}
+		td,
+		th {
+			padding: 10px;
+		}
+		th {
+			background: linear-gradient(
+				90deg,
+				rgba(255, 0, 0, 0.5) 0%,
+				rgba(255, 154, 0, 0.5) 10%,
+				rgba(208, 222, 33, 0.5) 20%,
+				rgba(79, 220, 74, 0.5) 30%,
+				rgba(63, 218, 216, 0.5) 40%,
+				rgba(47, 201, 226, 0.5) 50%,
+				rgba(28, 127, 238, 0.5) 60%,
+				rgba(95, 21, 242, 0.5) 70%,
+				rgba(186, 12, 248, 0.5) 80%,
+				rgba(251, 7, 217, 0.5) 90%,
+				rgba(255, 0, 0, 0.5) 100%
+			);
+			color: $darkblue;
+			text-align: center;
+		}
+		td {
+			color: darken($blue, 20%);
+		}
+	}
+}
+
 .custom-tooltip {
 	--bs-tooltip-bg: white;
 	--bs-tooltip-color: #2a1280;
@@ -484,11 +625,11 @@ a {
 			left: 0;
 			transform: translateY(-50%);
 
-			// max-height:400px;
-			// height:100%;
+			max-height: 400px;
+			height: 100%;
 
-			width: 100%;
-			max-width: 225px;
+			// width: 100%;
+			// max-width: 225px;
 
 			animation: floatDoll 2.65s ease-in-out infinite alternate;
 			-webkit-animation: floatDoll 2.65s ease-in-out infinite alternate;
@@ -539,24 +680,29 @@ a {
 			}
 
 			.text {
-				h1 {
-					// background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
-					// background: linear-gradient(
-					// 	90deg,
-					// 	rgba(255, 0, 0, 1) 0%,
-					// 	rgba(255, 154, 0, 1) 10%,
-					// 	rgba(208, 222, 33, 1) 20%,
-					// 	rgba(79, 220, 74, 1) 30%,
-					// 	rgba(63, 218, 216, 1) 40%,
-					// 	rgba(47, 201, 226, 1) 50%,
-					// 	rgba(28, 127, 238, 1) 60%,
-					// 	rgba(95, 21, 242, 1) 70%,
-					// 	rgba(186, 12, 248, 1) 80%,
-					// 	rgba(251, 7, 217, 1) 90%,
-					// 	rgba(255, 0, 0, 1) 100%
-					// );
-					// -webkit-background-clip: text;
-					// -webkit-text-fill-color: transparent;
+				&.about {
+					.image {
+						max-width: 300px;
+						margin-left: auto;
+						margin-right: auto;
+
+						img {
+							border-radius: 10px;
+						}
+					}
+				}
+
+				&.polaroid {
+					.image-name {
+						.megatitle {
+							font-size: clamp(35px, 8vw, 130px);
+						}
+					}
+					.image {
+						img {
+							border-radius: 10px;
+						}
+					}
 				}
 			}
 
@@ -640,9 +786,8 @@ footer {
 		padding: 30px 0;
 
 		.footer-text {
-			color: $light;
-
 			p {
+				color: $light;
 				text-align: center;
 				margin-bottom: 0;
 				font-weight: 500;
