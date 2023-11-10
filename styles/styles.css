@@ -51,6 +51,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
 }
 
 img {
@@ -403,7 +404,7 @@ table tr td {
 }
 .content-page .content .pagedoll img {
   height: 100%;
-  width: 100%;
+  width: unset;
   filter: drop-shadow(0px 0px 7px rgba(33, 150, 243, 0.3));
 }
 .content-page .content .cloud {

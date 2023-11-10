@@ -104,6 +104,7 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	font-family: $second-font;
+	overflow-x: hidden;
 }
 img {
 	width: 100%;
@@ -636,7 +637,8 @@ table {
 
 			img {
 				height: 100%;
-				width: 100%;
+				width: unset;
+				// width: 100%;
 
 				// filter: drop-shadow(0px 0px 5px rgba(#2a1280, 0.3));
 				filter: drop-shadow(0px 0px 7px rgba(#2196f3, 0.3));
