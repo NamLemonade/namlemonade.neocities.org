@@ -88,7 +88,6 @@ p {
   line-height: 1.8em;
 }
 p.caption {
-  color: #2e2e2e;
   font-size: 13px;
   text-align: center;
   margin-top: 10px;
@@ -486,6 +485,9 @@ table tr td {
 footer {
   margin-top: 50px;
 }
+footer .footer-curve {
+  margin-bottom: -1px;
+}
 footer .footer-curve svg {
   overflow: hidden;
   vertical-align: bottom;
@@ -499,6 +501,14 @@ footer .footer-content .footer-text p {
   text-align: center;
   margin-bottom: 0;
   font-weight: 500;
+}
+footer .footer-content .footer-text .footer-button {
+  max-width: 89px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .footer-content .footer-text .footer-button img {
+  width: 100%;
 }
 footer .footer-content .counter img {
   width: unset;

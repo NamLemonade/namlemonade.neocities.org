@@ -152,7 +152,7 @@ p {
 	line-height: 1.8em;
 
 	&.caption {
-		color: $dark;
+		// color: $dark;
 		font-size: 13px;
 		text-align: center;
 		margin-top: 10px;
@@ -776,6 +776,7 @@ footer {
 	margin-top: 50px;
 
 	.footer-curve {
+		margin-bottom: -1px;
 		svg {
 			overflow: hidden;
 			vertical-align: bottom;
@@ -793,6 +794,15 @@ footer {
 				text-align: center;
 				margin-bottom: 0;
 				font-weight: 500;
+			}
+
+			.footer-button {
+				max-width: 89px;
+				margin-left: auto;
+				margin-right: auto;
+				img {
+					width: 100%;
+				}
 			}
 		}
 
