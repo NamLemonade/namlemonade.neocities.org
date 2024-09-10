@@ -19,7 +19,7 @@ $darkblue: #2a1280;
 .btn {
 	background-color: $blue;
 	border-radius: 30px;
-	color: #fff;
+	color: $light;
 	padding: 15px 30px;
 	border: none;
 	transition: none;
@@ -169,6 +169,9 @@ p {
 			background: unset;
 
 			.accordion-button {
+				color: $blue;
+				font-weight: 500;
+				transition: all 0.3s ease;
 				&:hover,
 				&:not(.collapsed) {
 					background: lighten($blue, 25%);
@@ -182,9 +185,6 @@ p {
 				&:focus {
 					box-shadow: unset;
 				}
-				color: $blue;
-				font-weight: 500;
-				transition: all 0.3s ease;
 			}
 		}
 	}
@@ -290,7 +290,7 @@ table {
 
 .custom-tooltip {
 	--bs-tooltip-bg: white;
-	--bs-tooltip-color: #2a1280;
+	--bs-tooltip-color: $darkblue;
 	--bs-tooltip-opacity: 1;
 }
 
@@ -390,10 +390,10 @@ table {
 		}
 	}
 	.navbar-content {
-		background: #fff;
+		background: $light;
 		border-radius: 10px;
 		overflow: hidden;
-		box-shadow: 0px 0px 7px rgba(#2196f3, 0.3);
+		box-shadow: 0px 0px 7px rgba($blue, 0.3);
 
 		.navbar-header {
 			background: linear-gradient(
@@ -556,7 +556,8 @@ table {
 			background: $light;
 			border-radius: 10px;
 			overflow: hidden;
-			box-shadow: 0px 0px 7px rgba(#2196f3, 0.3);
+			box-shadow: 0px 0px 7px rgba($blue, 0.3);
+			height: 100%;
 			&.changelog {
 				.block-content {
 					max-height: 250px;
@@ -640,8 +641,8 @@ table {
 				width: unset;
 				// width: 100%;
 
-				// filter: drop-shadow(0px 0px 5px rgba(#2a1280, 0.3));
-				filter: drop-shadow(0px 0px 7px rgba(#2196f3, 0.3));
+				// filter: drop-shadow(0px 0px 5px rgba($darkblue, 0.3));
+				filter: drop-shadow(0px 0px 7px rgba($blue, 0.3));
 			}
 		}
 
@@ -656,8 +657,8 @@ table {
 			-webkit-animation: floatCloud 2.65s ease-in-out infinite alternate;
 
 			img {
-				// filter: drop-shadow(0px 0px 5px rgba(#2a1280, 0.3));
-				filter: drop-shadow(0px 0px 7px rgba(#2196f3, 0.3));
+				// filter: drop-shadow(0px 0px 5px rgba($darkblue, 0.3));
+				filter: drop-shadow(0px 0px 7px rgba($blue, 0.3));
 			}
 		}
 
@@ -666,8 +667,8 @@ table {
 			background: $light;
 			border-radius: 30px;
 
-			// box-shadow: 0px 0px 15px rgba(#2a1280, 0.3);
-			box-shadow: 0px 0px 7px rgba(#2196f3, 0.3);
+			// box-shadow: 0px 0px 15px rgba($darkblue, 0.3);
+			box-shadow: 0px 0px 7px rgba($blue, 0.3);
 
 			padding: 50px;
 
