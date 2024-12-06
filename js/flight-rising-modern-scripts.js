@@ -1,4 +1,4 @@
-// ========== ARRAYS ==========
+// ========== ARRAYS AND VALUES ==========
 
 var websiteUrl = document.location.origin;
 
@@ -1943,6 +1943,47 @@ var speciesArray = [
 	}
 ];
 
+var raritiesCalcsArray = {
+	"plentiful": {
+		"plentiful": 50,
+		"common": 70,
+		"uncommon": 85,
+		"limited": 97,
+		"rare": 99
+	},
+	"common": {
+		"plentiful": 30,
+		"common": 50,
+		"uncommon": 75,
+		"limited": 90,
+		"rare": 99
+	},
+	"uncommon": {
+		"plentiful": 15,
+		"common": 25,
+		"uncommon": 50,
+		"limited": 85,
+		"rare": 98
+	},
+	"limited": {
+		"plentiful": 3,
+		"common": 10,
+		"uncommon": 15,
+		"limited": 50,
+		"rare": 97
+	},
+	"rare": {
+		"plentiful": 1,
+		"common": 1,
+		"uncommon": 2,
+		"limited": 3,
+		"rare": 50
+	}
+};
+
+// For color calc
+var colorsLengthDivided = Math.floor(colorsArray.length / 2);
+
 // ========== FORMATTERS ==========
 
 function formatResultColors(state) {
@@ -1961,7 +2002,6 @@ function formatSelectionColors(state) {
 
 	var $state = $('<div><div></div></div>');
 
-	// Use .text() instead of HTML string concatenation to avoid script injection issues
 	$state.find('div').text(state.text);
 	$state.find('div').attr('style', 'background:' + state.color + '; color:' + state.textcolor + ';');
 
@@ -1983,7 +2023,6 @@ function formatSelectionSpecies(state) {
 
 	var $state = $('<div class="d-flex align-items-center"><img class="img-dragon" /><span></span></div>');
 
-	// Use .text() instead of HTML string concatenation to avoid script injection issues
 	$state.find('span').text(state.text);
 	$state.find('img').attr('src', websiteUrl + '/' + state.image);
 
@@ -2005,22 +2044,13 @@ function formatSelectionGenes(state) {
 
 	var $state = $('<div class="d-flex align-items-center"><span></span></div>');
 
-	// Use .text() instead of HTML string concatenation to avoid script injection issues
 	$state.find('span').text(state.text);
 	$state.find('img').attr('src', websiteUrl + '/' + state.image);
 
 	return $state;
 }
 
-// ========== FUNCTIONS ==========
-
-$('input').on('keyup', function () {
-	if (!$(this).val()) {
-		$(this).removeClass('filled');
-	} else {
-		$(this).addClass('filled');
-	}
-});
+// ========== DOC READY ==========
 
 $(document).ready(function () {
 	$('#parent-one-specie').select2({
@@ -2140,6 +2170,14 @@ $(document).ready(function () {
 
 // ========== ACTIONS ==========
 
+$('input').on('keyup', function () {
+	if (!$(this).val()) {
+		$(this).removeClass('filled');
+	} else {
+		$(this).addClass('filled');
+	}
+});
+
 $('#generateBreedingChart').on('click', function () { 
 
 	var parentOne = {
@@ -2164,68 +2202,103 @@ $('#generateBreedingChart').on('click', function () {
 		'tertiary-gene' : tertiaryGenesArray.find(gene => gene.id == $('#parent-two-tertiary-gene').val())
 	};
 
-	$('#parentOneResult .name strong').text(parentOne['name']);
-	$('#parentOneResult img').attr('src', websiteUrl + '/' + parentOne['specie']['image']);
+	displayInformationsLoop({ 'parent-one': parentOne, 'parent-two': parentTwo });
 
-	$('#parentOneResult .primary-color .color-square').css('background-color', parentOne['primary-color']['color']);
-	$('#parentOneResult .primary-color .color-name').text(parentOne['primary-color']['text']);
-	$('#parentOneResult .primary-gene .gene-name').text(parentOne['primary-gene']['text']);
+	calcRarityPercentage(parentOne['specie']['text'], parentTwo['specie']['text'], parentOne['specie']['rarity'], parentTwo['specie']['rarity'], 'parentOneSpecie', 'parentTwoSpecie', 'speciesOddsBar');
+	calcRarityPercentage(parentOne['primary-gene']['text'], parentTwo['primary-gene']['text'], parentOne['primary-gene']['rarity'], parentTwo['primary-gene']['rarity'], 'parentOnePrimaryGene', 'parentTwoPrimaryGene', 'primaryGenesOddsBar');
+	calcRarityPercentage(parentOne['secondary-gene']['text'], parentTwo['secondary-gene']['text'], parentOne['secondary-gene']['rarity'], parentTwo['secondary-gene']['rarity'], 'parentOneSecondaryGene', 'parentTwoSecondaryGene', 'secondaryGenesOddsBar');
+	calcRarityPercentage(parentOne['tertiary-gene']['text'], parentTwo['tertiary-gene']['text'], parentOne['tertiary-gene']['rarity'], parentTwo['tertiary-gene']['rarity'], 'parentOneTertiaryGene', 'parentTwoTertiaryGene', 'tertiaryGenesOddsBar');
 
-	$('#parentOneResult .secondary-color .color-square').css('background-color', parentOne['secondary-color']['color']);
-	$('#parentOneResult .secondary-color .color-name').text(parentOne['secondary-color']['text']);
-	$('#parentOneResult .secondary-gene .gene-name').text(parentOne['secondary-gene']['text']);
+	// FIXME: Rework the count.
+	let primColorOne = parentOne['primary-color']['id'];
+	let primColorTwo = parentTwo['primary-color']['id'];
 
-	$('#parentOneResult .tertiary-color .color-square').css('background-color', parentOne['tertiary-color']['color']);
-	$('#parentOneResult .tertiary-color .color-name').text(parentOne['tertiary-color']['text']);
-	$('#parentOneResult .tertiary-gene .gene-name').text(parentOne['tertiary-gene']['text']);
+	let secColorOne = parentOne['secondary-color']['id'];
+	let secColorTwo = parentTwo['secondary-color']['id'];
 
+	let tertColorOne = parentOne['tertiary-color']['id'];
+	let tertColorTwo = parentTwo['tertiary-color']['id'];
 
-
-	$('#parentTwoResult .name strong').text(parentTwo['name']);
-	$('#parentTwoResult img').attr('src', websiteUrl + '/' + parentTwo['specie']['image']);
-
-	$('#parentTwoResult .primary-color .color-square').css('background-color', parentTwo['primary-color']['color']);
-	$('#parentTwoResult .primary-color .color-name').text(parentTwo['primary-color']['text']);
-	$('#parentTwoResult .primary-gene .gene-name').text(parentTwo['primary-gene']['text']);
-
-	$('#parentTwoResult .secondary-color .color-square').css('background-color', parentTwo['secondary-color']['color']);
-	$('#parentTwoResult .secondary-color .color-name').text(parentTwo['secondary-color']['text']);
-	$('#parentTwoResult .secondary-gene .gene-name').text(parentTwo['secondary-gene']['text']);
-
-	$('#parentTwoResult .tertiary-color .color-square').css('background-color', parentTwo['tertiary-color']['color']);
-	$('#parentTwoResult .tertiary-color .color-name').text(parentTwo['tertiary-color']['text']);
-	$('#parentTwoResult .tertiary-gene .gene-name').text(parentTwo['tertiary-gene']['text']);
-
-	if (parentOne['primary-color']['id'] <= parentTwo['primary-color']['id']) {
-		for (var i = parentOne['primary-color']['id']; i <= parentTwo['primary-color']['id']; i++) { 
-			$('.results-block .colors-list.primary').append('<div class="color-square" style="background:' + colorsArray[i]['color'] + ';"></div>');
-		}
-	}
-	else { 
-		for (var i = parentTwo['primary-color']['id']; i <= parentOne['primary-color']['id']; i++) { 
-			$('.results-block .colors-list.primary').append('<div class="color-square" style="background:' + colorsArray[i]['color'] + ';"></div>');
-		}
+	if (parentOne['primary-color']['id'] > parentTwo['primary-color']['id']) { 
+		primColorOne = parentTwo['primary-color']['id'];
+		primColorTwo = parentOne['primary-color']['id'];
 	}
 
-	if (parentOne['secondary-color']['id'] <= parentTwo['secondary-color']['id']) {
-		for (var i = parentOne['secondary-color']['id']; i <= parentTwo['secondary-color']['id']; i++) { 
-			$('.results-block .colors-list.secondary').append('<div class="color-square" style="background:' + colorsArray[i]['color'] + ';"></div>');
-		}
-	}
-	else { 
-		for (var i = parentTwo['secondary-color']['id']; i <= parentOne['secondary-color']['id']; i++) {
-			$('.results-block .colors-list.secondary').append('<div class="color-square" style="background:' + colorsArray[i]['color'] + ';"></div>');
-		}
+	if (parentOne['secondary-color']['id'] > parentTwo['secondary-color']['id']) { 
+		secColorOne = parentTwo['secondary-color']['id'];
+		secColorTwo = parentOne['secondary-color']['id'];
 	}
 
-	if (parentOne['tertiary-color']['id'] <= parentTwo['tertiary-color']['id']) {
-		for (var i = parentOne['tertiary-color']['id']; i <= parentTwo['tertiary-color']['id']; i++) { 
-			$('.results-block .colors-list.tertiary').append('<div class="color-square" style="background:' + colorsArray[i]['color'] + ';"></div>');
-		}
+	if (parentOne['tertiary-color']['id'] > parentTwo['tertiary-color']['id']) { 
+		tertColorOne = parentTwo['tertiary-color']['id'];
+		tertColorTwo = parentOne['tertiary-color']['id'];
 	}
-	else { 
-		for (var i = parentTwo['tertiary-color']['id']; i <= parentOne['tertiary-color']['id']; i++) { 
-			$('.results-block .colors-list.tertiary').append('<div class="color-square" style="background:' + colorsArray[i]['color'] + ';"></div>');
-		}
-	}
+
+	calcColorsDistance(primColorOne, primColorTwo, '.results-block .colors-list.primary');
+	calcColorsDistance(secColorOne, secColorTwo, '.results-block .colors-list.secondary');
+	calcColorsDistance(tertColorOne, tertColorTwo, '.results-block .colors-list.tertiary');
+
+	$("#breedingStats").removeClass("d-none");
+
+	document.getElementById('breedingStats').scrollIntoView();
+
+	// Load all the newly created tooltips. Is this gonna overload things? I'd have to see..
+	var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+	var tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 });
+
+// ========== FUNCTIONS ==========
+
+function displayInformationsLoop(displayObj) { 
+	console.log(displayObj);
+	for (const key in displayObj) { 
+		$('.parent-result-block.' + key + ' .name strong').text(displayObj[key]['name']);
+		$('.parent-result-block.' + key + ' img').attr('src', websiteUrl + '/' + displayObj[key]['specie']['image']);
+
+		$('.parent-result-block.' + key + ' .primary-color .color-square').css('background-color', displayObj[key]['primary-color']['color']);
+		$('.parent-result-block.' + key + ' .primary-color .color-name').text(displayObj[key]['primary-color']['text']);
+		$('.parent-result-block.' + key + ' .primary-gene .gene-name').text(displayObj[key]['primary-gene']['text']);
+
+		$('.parent-result-block.' + key + ' .secondary-color .color-square').css('background-color', displayObj[key]['secondary-color']['color']);
+		$('.parent-result-block.' + key + ' .secondary-color .color-name').text(displayObj[key]['secondary-color']['text']);
+		$('.parent-result-block.' + key + ' .secondary-gene .gene-name').text(displayObj[key]['secondary-gene']['text']);
+
+		$('.parent-result-block.' + key + ' .tertiary-color .color-square').css('background-color', displayObj[key]['tertiary-color']['color']);
+		$('.parent-result-block.' + key + ' .tertiary-color .color-name').text(displayObj[key]['tertiary-color']['text']);
+		$('.parent-result-block.' + key + ' .tertiary-gene .gene-name').text(displayObj[key]['tertiary-gene']['text']);
+	};
+};
+
+function calcColorsDistance(colorOne, colorTwo, pathToAppendTo) { 
+	$(pathToAppendTo).empty();
+
+	let distanceBetweenTwoColors = colorTwo - colorOne;
+
+	if (distanceBetweenTwoColors > colorsLengthDivided) {
+		for (let i = colorTwo; i <= colorsArray.length - 1; i++) { 
+			$(pathToAppendTo).append('<div class="color-square" style="background:' + colorsArray[i]["color"] + ';" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="' + colorsArray[i]["text"] + '"></div>');
+		};
+		
+		for (let i = 0; i <= colorOne; i++) { 
+			$(pathToAppendTo).append('<div class="color-square" style="background:' + colorsArray[i]["color"] + ';" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="' + colorsArray[i]["text"] + '"></div>');
+		};
+	}
+	else { 
+		for (let i = colorOne; i <= colorTwo; i++) { 
+			$(pathToAppendTo).append('<div class="color-square" style="background:' + colorsArray[i]["color"] + ';" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="' + colorsArray[i]["text"] + '"></div>');
+		}
+	}
+};
+
+function calcRarityPercentage(nameOne, nameTwo, rarityOneName, rarityTwoName, parentOneBlockId, parentTwoBlockId, progressBarBlockId) { 
+	var rarityOnePercentage = raritiesCalcsArray[rarityOneName][rarityTwoName];
+	var rarityTwoPercentage = 100 - rarityOnePercentage;
+
+	$('.' + parentOneBlockId + ' .name strong').text(nameOne);
+	$('.' + parentOneBlockId + ' .odd').text(rarityOnePercentage + '%');
+
+	$('.' + parentTwoBlockId + ' .name strong').text(nameTwo);
+	$('.' + parentTwoBlockId + ' .odd').text(rarityTwoPercentage + '%');
+
+	$('.' + progressBarBlockId + ' .progress .progress-bar').css('width', rarityOnePercentage + '%');
+};

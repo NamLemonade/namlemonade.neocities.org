@@ -707,23 +707,30 @@ table tr td {
   font-weight: 700;
 }
 .select2-container--default .select2-dropdown .select2-results > .select2-results__options li[aria-selected=true] {
-  background-color: #ddd;
+  background-color: #51adf6;
 }
 .select2-container--default .select2-dropdown .select2-results > .select2-results__options li.select2-results__option--highlighted {
-  background: #000;
+  background: #2196f3;
   color: #f2f2f0;
 }
 .select2-container--default .select2-dropdown .select2-results > .select2-results__options li .img-dragon {
   width: 30px;
   margin-right: 10px;
 }
+.select2-container--default .select2-results__option--selected {
+  background: #b2dbfb;
+}
 
-#breedingSimulation .parent-result-block .primary-color .color-square, #breedingSimulation .parent-result-block .secondary-color .color-square, #breedingSimulation .parent-result-block .tertiary-color .color-square {
+#breedingStats hr {
+  margin: 10px 0;
+  border-color: #2196f3;
+}
+#breedingStats .parent-result-block .primary-color .color-square, #breedingStats .parent-result-block .secondary-color .color-square, #breedingStats .parent-result-block .tertiary-color .color-square {
   width: 15px;
   height: 15px;
   border: 1px solid #000;
 }
-#breedingSimulation .results-block .colors-list .color-square {
+#breedingStats .results-block .colors-list .color-square {
   width: 15px;
   height: 15px;
   border: 1px solid #000;

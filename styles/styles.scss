@@ -1078,11 +1078,11 @@ table {
 					}
 
 					&[aria-selected='true'] {
-						background-color: #ddd;
+						background-color: lighten($blue, 10%);
 					}
 
 					&.select2-results__option--highlighted {
-						background: #000;
+						background: $blue;
 						color: #f2f2f0;
 					}
 
@@ -1094,9 +1094,17 @@ table {
 			}
 		}
 	}
+
+	.select2-results__option--selected{
+		background: lighten($blue, 30%);
+	}
 }
 
-#breedingSimulation{
+#breedingStats{
+	hr{
+		margin: 10px 0;
+		border-color: $blue;
+	}
 	.parent-result-block{
 		.primary-color, .secondary-color, .tertiary-color{
 			.color-square{

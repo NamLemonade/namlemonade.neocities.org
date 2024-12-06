@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Flight Rising Breeding Stats Simulation | Nam Lemonade's Website</title>
+	<title>Flight Rising Breeding Stats Checker | Nam Lemonade's Website</title>
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -89,6 +89,9 @@
 								<a href="websites.html">Cool Webs</a>
 							</div>
 							<div class="col-auto text-center">
+								<a href="flightrisingmodern.html">Flight Rising breeding tool</a>
+							</div>
+							<div class="col-auto text-center">
 								<a href="blog.html">Blog</a>
 							</div>
 							<div class="col-auto text-center">
@@ -115,13 +118,44 @@
 					<div class="content">
 						<div class="content-content">
 							<div class="text">
-								<h1>Nam's Flight Rising Breeding Stats Simulation</h1>
-								<p><strong>This is a tool for modern breeds only. Ancients coming at some
-										point.</strong></p>
-								<p>This is my own simulator for breeding. There are informations I want to have that the
-									scrying workshop doesn't provide.</p>
-								<p>I made it for myself only. I might update it, I might not. You can use it, just don't
-									expect me to keep it updated. ^^'</p>
+								<h1>Nam's Flight Rising Breeding Stats Checker</h1>
+								<!-- <p><strong>This is a tool for modern breeds only. Ancients coming at some
+										point.</strong></p> -->
+								<p>Welcome! This is a simple breeding stats calculator for the online game Flignt Rising! You are currently using the Modern version of the tool! The version for ancients will come at a later date!</p>
+								<p>This tool was built with the goal of being mobile friendly and easy to use!</p>
+								<p>I made it for myself, but please, feel free to use it! Linking back is not required, but would be very appreciated!</p>
+								<p>Last updated: December 6th 2024</p>
+
+								<div class="accordion" id="faq">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#faqCollapse"
+                                                aria-expanded="false" aria-controls="faqCollapse">
+                                                FAQ
+                                            </button>
+                                        </h2>
+                                        <div id="faqCollapse" class="accordion-collapse collapse"
+                                            data-bs-parent="#faq">
+                                            <div class="accordion-body">
+                                                <p><strong>Will this be kept up-to-date?</strong></p>
+												<p>Depends on how active I am! I made this for myself. In between life, my job, and my interest coming and going, I might not keep this 100% up-to-date, but I'll do my best!</p>
+
+												<p><strong>When will ancients come?</strong></p>
+												<p>To be honest, when I'm motivated enough ^^' This is a side-project for me, and honestly the most time-consuming part is manually making the array with all the colors and genes. I'll get to it eventually though!</p>
+
+												<p><strong>There's a bug!</strong></p>
+												<p>Shoot! If you don't mind, can you report it to me by messaging / tagging my <a href="https://bsky.app/profile/nam.cervine.tech" target="_blank">Bluesky account</a> or leaving a comment on <a href="https://www1.flightrising.com/clan-profile/434329" target="_blank">my Flight Rising profile</a>? Please be as detailed as possible! And tell me which device you are using, which browser, stuff like that! Thank you!</p>
+												
+												<p><strong>Any future projects / updates?</strong></p>
+												<p>Well, first I want to make a version for ancients of course! And in the far future, I do want to take a crack at generating random offspring using links to the Scrying Workshop "Predict morphology" feature. I wouldn't be using the pictures link, since it would go against their policy on concurrent connections and damaging site stability. And hurting FR is not something I intend to do.</p>
+											
+												<p><strong>How did you make this?</strong></p>
+												<p>This is entirely built in HTML, CSS and JS. I use a few libraries to make my work easier, but everything in managed in Javascript. Hey, if you're interested in seeing the code, my website's code is all on <a href="https://github.com/NamLemonade/namlemonade.neocities.org" target="_blank">my Github</a>!</p>
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
 							</div>
 
 							<div class="row justify-content-between">
@@ -303,63 +337,291 @@
 										<!-- <button class="ms-3 btn big-btn">Generate random offspring (NOT WORKING)</button> -->
 									</div>
 								</div>
-								<div id="breedingSimulation" class="col-12 mt-5">
+								<div id="breedingStats" class="col-12 mt-5 d-none">
 									<div class="block">
 										<div class="block-head">
 											<p>Result</p>
 										</div>
 										<div class="block-content">
-											<div class="row justify-content-center">
-												<div class="col-12 col-xl-3">
-													<div id="parentOneResult" class="parent-result-block">
-														<p class="name text-center"><strong>Name</strong></p>
-														<div class="d-flex justify-content-center mb-3">
-															<img src="http://127.0.0.1:3000/images/FR/species/bogsneak.png" alt="">
+
+											<div class="results-rows">
+												<div class="row justify-content-center align-items-center">
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-one">
+															<p class="name text-center"><strong></strong></p>
+															<div class="d-flex justify-content-center">
+																<img src="" alt="">
+															</div>
 														</div>
-														<div class="primary-color d-flex align-items-center mt-1"><p class="me-2"><strong>Primary color:</strong></p> <div class="color-square me-2"></div> <p class="color-name"></p></div>
-														<div class="primary-gene d-flex align-items-center mt-1"><p class="me-2"><strong>Primary gene:</strong></p> <p class="gene-name"></p></div>
-														<div class="secondary-color d-flex align-items-center mt-1"><p class="me-2"><strong>Secondary color:</strong></p> <div class="color-square me-2"></div> <p class="color-name"></p></div>
-														<div class="secondary-gene d-flex align-items-center mt-1"><p class="me-2"><strong>Secondary gene:</strong></p> <p class="gene-name"></p></div>
-														<div class="tertiary-color d-flex align-items-center mt-1"><p class="me-2"><strong>Tertiary color:</strong></p> <div class="color-square me-2"></div> <p class="color-name"></p></div>
-														<div class="tertiary-gene d-flex align-items-center mt-1"><p class="me-2"><strong>Tertiary gene:</strong></p> <p class="gene-name"></p></div>
+													</div>
+													<div class="col-12 col-md-6 p-2">
+														<div class="results-block">
+															<div class="d-flex align-items-center justify-content-between">
+																<div class="parentOneSpecie text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+																
+																<div class="parentTwoSpecie text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+															</div>
+															<div class="speciesOddsBar">
+																<div class="progress" role="progressbar" aria-label="Species odds" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar progress-bar-striped bg-info" style="width: 0%;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-two">
+															<p class="name text-center"><strong></strong></p>
+															<div class="d-flex justify-content-center">
+																<img src="" alt="">
+															</div>
+														</div>
 													</div>
 												</div>
-												<div class="col-12 col-xl-6">
-													<div class="results-block">
-														<p class="text-center"><strong>Breeding spread</strong></p>
-
-														<p class="text-center mt-3"><strong>Species odds</strong></p>
-
-														<p class="text-center mt-3"><strong>Primary colors</strong></p>
-														<div class="colors-list primary d-flex justify-content-center flex-wrap"></div>
-
-														<p class="text-center mt-3"><strong>Primary genes odds</strong></p>
-
-														<p class="text-center mt-3"><strong>Secondary colors</strong></p>
-														<div class="colors-list secondary d-flex justify-content-center flex-wrap"></div>
-
-														<p class="text-center mt-3"><strong>Secondary genes odds</strong></p>
-
-														<p class="text-center mt-3"><strong>Tertiary colors</strong></p>
-														<div class="colors-list tertiary d-flex justify-content-center flex-wrap"></div>
-
-														<p class="text-center mt-3"><strong>Tertiary genes odds</strong></p>
-
+												<hr>
+												<div class="row justify-content-center align-items-center">
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-one text-center">
+															<div class="primary-color">
+																<p><strong>Primary color</strong></p> 
+																<div class="d-flex justify-content-center">
+																	<div class="color-square" style=""></div> 
+																</div>
+																<p class="color-name"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-6 p-2">
+														<div class="results-block">
+															<div class="colors-list primary d-flex justify-content-center flex-wrap"></div>
+														</div>
+													</div>
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-two text-center">
+															<div class="primary-color">
+																<p><strong>Primary color</strong></p>
+																<div class="d-flex justify-content-center">
+																	<div class="color-square" style=""></div> 
+																</div>
+																<p class="color-name"></p>
+															</div>
+														</div>
 													</div>
 												</div>
-												<div class="col-12 col-xl-3">
-													<div id="parentTwoResult" class="parent-result-block">
-														<p class="name text-center"><strong>Name</strong></p>
-														<div class="d-flex justify-content-center mb-3">
-															<img src="http://127.0.0.1:3000/images/FR/species/bogsneak.png" alt="">
+												<hr>
+												<div class="row justify-content-center align-items-center">
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-one text-center">
+															<div class="primary-gene">
+																<p><strong>Primary gene</strong></p> 
+																<p class="gene-name"></p>
+															</div>
 														</div>
-														<div class="primary-color d-flex align-items-center mt-1"><p class="me-2"><strong>Primary color:</strong></p> <div class="color-square me-2"></div> <p class="color-name"></p></div>
-														<div class="primary-gene d-flex align-items-center mt-1"><p class="me-2"><strong>Primary gene:</strong></p> <p class="gene-name"></p></div>
-														<div class="secondary-color d-flex align-items-center mt-1"><p class="me-2"><strong>Secondary color:</strong></p> <div class="color-square me-2"></div> <p class="color-name"></p></div>
-														<div class="secondary-gene d-flex align-items-center mt-1"><p class="me-2"><strong>Secondary gene:</strong></p> <p class="gene-name"></p></div>
-														<div class="tertiary-color d-flex align-items-center mt-1"><p class="me-2"><strong>Tertiary color:</strong></p> <div class="color-square me-2"></div> <p class="color-name"></p></div>
-														<div class="tertiary-gene d-flex align-items-center mt-1"><p class="me-2"><strong>Tertiary gene:</strong></p> <p class="gene-name"></p></div>
 													</div>
+													<div class="col-12 col-md-6 p-2">
+														<div class="results-block">
+															<div class="d-flex align-items-center justify-content-between">
+																<div class="parentOnePrimaryGene text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+																<div class="parentTwoPrimaryGene text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+															</div>
+															<div class="primaryGenesOddsBar">
+																<div class="progress" role="progressbar" aria-label="Primary genes odds" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar progress-bar-striped bg-success" style="width: 0%;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-two text-center">
+															<div class="primary-gene">
+																<p><strong>Primary gene</strong></p>
+																<p class="gene-name"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<div class="row justify-content-center align-items-center">
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-one text-center">
+															<div class="secondary-color">
+																<p><strong>Secondary color</strong></p> 
+																<div class="d-flex justify-content-center">
+																	<div class="color-square" style=""></div> 
+																</div>
+																<p class="color-name"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-6 p-2">
+														<div class="results-block">
+															<div class="colors-list secondary d-flex justify-content-center flex-wrap"></div>
+														</div>
+													</div>
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-two text-center">
+															<div class="secondary-color">
+																<p><strong>Secondary color</strong></p>
+																<div class="d-flex justify-content-center">
+																	<div class="color-square" style=""></div> 
+																</div>
+																<p class="color-name"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<div class="row justify-content-center align-items-center">
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-one text-center">
+															<div class="secondary-gene">
+																<p><strong>Secondary gene</strong></p> 
+																<p class="gene-name"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-6 p-2">
+														<div class="results-block">
+															<div class="d-flex align-items-center justify-content-between">
+																<div class="parentOneSecondaryGene text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+																<div class="parentTwoSecondaryGene text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+															</div>
+															<div class="secondaryGenesOddsBar">
+																<div class="progress" role="progressbar" aria-label="Secondary genes odds" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar progress-bar-striped bg-warning" style="width: 0%;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-two text-center">
+															<div class="secondary-gene">
+																<p><strong>Secondary gene</strong></p>
+																<p class="gene-name"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<div class="row justify-content-center align-items-center">
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-one text-center">
+															<div class="tertiary-color">
+																<p><strong>Tertiary color</strong></p> 
+																<div class="d-flex justify-content-center">
+																	<div class="color-square" style=""></div> 
+																</div>
+																<p class="color-name"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-6 p-2">
+														<div class="results-block">
+															<div class="colors-list tertiary d-flex justify-content-center flex-wrap"></div>
+														</div>
+													</div>
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-two text-center">
+															<div class="tertiary-color">
+																<p><strong>Tertiary color</strong></p>
+																<div class="d-flex justify-content-center">
+																	<div class="color-square" style=""></div> 
+																</div>
+																<p class="color-name"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<div class="row justify-content-center align-items-center">
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-one text-center">
+															<div class="tertiary-gene">
+																<p><strong>Tertiary gene</strong></p> 
+																<p class="gene-name"></p>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-6 p-2">
+														<div class="results-block">
+															<div class="d-flex align-items-center justify-content-between">
+																<div class="parentOneTertiaryGene text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+																<div class="parentTwoTertiaryGene text-center">
+																	<p class="name"><strong></strong></p>
+																	<p class="odd"></p>
+																</div>
+															</div>
+															<div class="tertiaryGenesOddsBar">
+																<div class="progress" role="progressbar" aria-label="Tertiary genes odds" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar progress-bar-striped bg-danger" style="width: 0%;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-12 col-md-3 p-2">
+														<div class="parent-result-block parent-two text-center">
+															<div class="tertiary-gene">
+																<p><strong>Tertiary gene</strong></p>
+																<p class="gene-name"></p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<p class="text-end"><em>Tool made by <a href="https://www1.flightrising.com/clan-profile/434329" target="blank">NamLemonade</a></em></p>
+								</div>
+								<div class="col-12">
+									<div class="accordion" id="credits">
+										<div class="accordion-item">
+											<h2 class="accordion-header">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#creditsCollapse"
+													aria-expanded="false" aria-controls="creditsCollapse">
+													Credits
+												</button>
+											</h2>
+											<div id="creditsCollapse" class="accordion-collapse collapse"
+												data-bs-parent="#credits">
+												<div class="accordion-body">
+													<p><strong>Dragon emojis assets</strong></p>
+													<p><a href="https://www1.flightrising.com" target="_blank">Flight Rising</a></p>
+	
+													<p><strong>Species / Genes rarities</strong></p>
+													<p><a href="https://www1.flightrising.com/forums/gde/3109561#post_3109561" target="_blank">DarkPuffin on Flight Rising</a></p>
+
+													<p><strong>Colors list + hexadecimal values</strong></p>
+													<p><a href="https://www1.flightrising.com/forums/gde/3295373" target="_blank">Oncorhynchus on Flight Rising</a></p>
+
+													<p><strong>Inspirations</strong></p>
+													<p><a href="https://jiyoumcc.github.io/FlightRisingTool/" target="_blank">jiyoumcc's Flight Rising breeding tool</a> and <a href="https://keelanrosa.com/fr/" target="_blank">Keelanrosa's Flight Rising breeding stats card</a></p>
+
+													<p><strong>Code libraries used</strong></p>
+													<p><a href="https://jquery.com" target="_blank">JQuery</a>, <a href="https://getbootstrap.com" target="_blank">Bootstrap 5</a>, <a href="https://select2.org" target="_blank">Select2</a></p>
 												</div>
 											</div>
 										</div>
