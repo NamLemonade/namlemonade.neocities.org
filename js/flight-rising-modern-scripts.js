@@ -1299,53 +1299,59 @@ var primaryGenesArray = [
 	{
 		id: 38,
 		itemId: 0,
+		text: 'Soil',
+		rarity: 'limited'
+	},
+	{
+		id: 39,
+		itemId: 0,
 		text: 'Speckle',
 		rarity: 'common'
 	},
 	{
-		id: 39,
+		id: 40,
 		itemId: 0,
 		text: 'Starmap',
 		rarity: 'rare'
 	},
 	{
-		id: 40,
+		id: 41,
 		itemId: 0,
 		text: 'Stitched',
 		rarity: 'limited'
 	},
 	{
-		id: 41,
+		id: 42,
 		itemId: 0,
 		text: 'Swirl',
 		rarity: 'common'
 	},
 	{
-		id: 42,
+		id: 43,
 		itemId: 0,
 		text: 'Tapir',
 		rarity: 'common'
 	},
 	{
-		id: 43,
+		id: 44,
 		itemId: 0,
 		text: 'Tide',
 		rarity: 'limited'
 	},
 	{
-		id: 44,
+		id: 45,
 		itemId: 0,
 		text: 'Tiger',
 		rarity: 'common'
 	},
 	{
-		id: 45,
+		id: 46,
 		itemId: 0,
 		text: 'Vipera',
 		rarity: 'uncommon'
 	},
 	{
-		id: 46,
+		id: 47,
 		itemId: 0,
 		text: 'Wasp',
 		rarity: 'rare'
@@ -1500,137 +1506,143 @@ var secondaryGenesArray = [
 	{
 		id: 24,
 		itemId: 0,
-		text: 'Malachite',
+		text: 'Loom',
 		rarity: 'limited'
 	},
 	{
 		id: 25,
 		itemId: 0,
+		text: 'Malachite',
+		rarity: 'limited'
+	},
+	{
+		id: 26,
+		itemId: 0,
 		text: 'Marbled',
 		rarity: 'common'
 	},
 	{
-		id: 26,
+		id: 27,
 		itemId: 0,
 		text: 'Morph',
 		rarity: 'limited'
 	},
 	{
-		id: 27,
+		id: 28,
 		itemId: 0,
 		text: 'Myrid',
 		rarity: 'limited'
 	},
 	{
-		id: 28,
+		id: 29,
 		itemId: 0,
 		text: 'Noxtide',
 		rarity: 'uncommon'
 	},
 	{
-		id: 29,
+		id: 30,
 		itemId: 0,
 		text: 'Paint',
 		rarity: 'common'
 	},
 	{
-		id: 30,
+		id: 31,
 		itemId: 0,
 		text: 'Paisley',
 		rarity: 'limited'
 	},
 	{
-		id: 31,
+		id: 32,
 		itemId: 0,
 		text: 'Patchwork',
 		rarity: 'limited'
 	},
 	{
-		id: 32,
+		id: 33,
 		itemId: 0,
 		text: 'Peregrine',
 		rarity: 'common'
 	},
 	{
-		id: 33,
+		id: 34,
 		itemId: 0,
 		text: 'Rosette',
 		rarity: 'uncommon'
 	},
 	{
-		id: 34,
+		id: 35,
 		itemId: 0,
 		text: 'Saddle',
 		rarity: 'uncommon'
 	},
 	{
-		id: 35,
+		id: 36,
 		itemId: 0,
 		text: 'Safari',
 		rarity: 'common'
 	},
 	{
-		id: 36,
+		id: 37,
 		itemId: 0,
 		text: 'Sarcophagus',
 		rarity: 'rare'
 	},
 	{
-		id: 37,
+		id: 38,
 		itemId: 0,
 		text: 'Saturn',
 		rarity: 'uncommon'
 	},
 	{
-		id: 38,
+		id: 39,
 		itemId: 0,
 		text: 'Seraph',
 		rarity: 'uncommon'
 	},
 	{
-		id: 39,
+		id: 40,
 		itemId: 0,
 		text: 'Shimmer',
 		rarity: 'rare'
 	},
 	{
-		id: 40,
+		id: 41,
 		itemId: 0,
 		text: 'Sludge',
 		rarity: 'limited'
 	},
 	{
-		id: 41,
+		id: 42,
 		itemId: 0,
 		text: 'Spinner',
 		rarity: 'limited'
 	},
 	{
-		id: 42,
+		id: 43,
 		itemId: 0,
 		text: 'Striation',
 		rarity: 'common'
 	},
 	{
-		id: 43,
+		id: 44,
 		itemId: 0,
 		text: 'Stripe',
 		rarity: 'common'
 	},
 	{
-		id: 44,
+		id: 45,
 		itemId: 0,
 		text: 'Toxin',
 		rarity: 'limited'
 	},
 	{
-		id: 45,
+		id: 46,
 		itemId: 0,
 		text: 'Trail',
 		rarity: 'limited'
 	},
 	{
-		id: 46,
+		id: 47,
 		itemId: 0,
 		text: 'Weaver',
 		rarity: 'limited'
