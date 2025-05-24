@@ -56,6 +56,10 @@ body {
   background-size: cover;
   font-family: "Rubik", sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -339,6 +343,16 @@ table tr td {
 }
 
 /* Home header */
+.link-overflow {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.6s;
+  z-index: 10;
+}
+
 .content-page.page-404 .row {
   height: 100vh;
   min-height: 500px;
@@ -450,6 +464,9 @@ table tr td {
   font-size: clamp(35px, 8vw, 130px);
 }
 .content-page .content .content-content .text.polaroid .image img {
+  border-radius: 10px;
+}
+.content-page .content .content-content .image img {
   border-radius: 10px;
 }
 .content-page .content .content-content .social-block {
@@ -736,10 +753,43 @@ table tr td {
   border: 1px solid #000;
 }
 
+.blog-entry-block {
+  box-shadow: 0px 0px 7px rgba(33, 150, 243, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  margin-bottom: 30px;
+}
+.blog-entry-block:hover {
+  transform: scale(1.01);
+}
+.blog-entry-block time {
+  margin-bottom: 5px;
+  color: #0960a5;
+  display: block;
+}
+.blog-entry-block p.title {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Fredoka", sans-serif;
+  line-height: 1;
+}
+.blog-entry-block p.description {
+  margin-bottom: 10px;
+}
+
+.blog-entry-content time {
+  margin-bottom: 5px;
+  color: #0960a5;
+  display: block;
+}
+
 footer {
-  margin-top: 50px;
+  margin-top: auto;
 }
 footer .footer-curve {
+  margin-top: 50px;
   margin-bottom: -1px;
 }
 footer .footer-curve svg {
@@ -769,7 +819,7 @@ footer .footer-content .counter img {
 }
 
 /* Media queries */
-@media only screen and (max-device-width: 991px), only screen and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .content-page .content .cloud {
     right: -60px;
   }
@@ -777,12 +827,12 @@ footer .footer-content .counter img {
     left: -25px;
   }
 }
-@media only screen and (max-device-width: 767px), only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .content-page .content .pagedoll {
     left: -70px;
   }
 }
-@media only screen and (max-device-width: 575px), only screen and (max-width: 575px) {
+@media only screen and (max-width: 575px) {
   .content-page .content .pagedoll,
   .content-page .content .cloud {
     display: none;
