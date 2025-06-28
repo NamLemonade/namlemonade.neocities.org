@@ -8,6 +8,8 @@ var themesArray = ['theme-land', 'theme-sea'];
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
 
+$('html').removeClass();
+
 if (localStorage.getItem('pageTheme') == null) {
 	let randomTheme = Math.floor(Math.random() * themesArray.length);
 	localStorage.setItem('pageTheme', themesArray[randomTheme]);

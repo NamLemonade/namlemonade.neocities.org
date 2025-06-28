@@ -54,7 +54,8 @@ html {
 			}
 		}
 
-		p {
+		p,
+		ul li {
 			color: color.adjust($blue, $lightness: -20%);
 		}
 
@@ -290,6 +291,12 @@ html {
 					.navbar-links {
 						.row {
 							.col-auto {
+								&.land {
+									display: block;
+								}
+								&.sea {
+									display: none;
+								}
 								&:nth-child(8n + 1) {
 									a {
 										color: rgb(255, 0, 0);
