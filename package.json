@@ -1,0 +1,17 @@
+{
+  "name": "namlemonade.neocities.org",
+  "version": "1.0.0",
+  "description": "Source code for my Neocities website, namlemonade.neocities.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.89.2"
+  }
+}

@@ -1,0 +1,27 @@
+---
+layout: master/base.njk
+title: My blog | Nam Lemonade's Website
+pathToGoTo: ../
+---
+
+<div class="col-12">
+	<div class="content">
+		<div class="content-content blog-entry-content">
+			<div class="text">
+				<div class="mb-3">
+					<a href="../blog.html"><i class="fas fa-arrow-left me-2"></i> Back to blog</a>
+				</div>
+				<time><i class="fa-regular fa-clock me-1"></i> {{ date.toISOString().split('T')[0] }}</time>
+				<h1>{{ entryTitle }}</h1>
+
+				<div class="text blog-entry-text mt-3">
+					{{ content | safe }}
+				</div>
+
+				<div class="mt-5 d-flex justify-content-center">
+					<a href="../blog.html"><i class="fas fa-arrow-left me-2"></i> Back to blog</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

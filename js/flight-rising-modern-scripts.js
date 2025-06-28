@@ -2262,7 +2262,6 @@ $('#generateBreedingChart').on('click', function () {
 // ========== FUNCTIONS ==========
 
 function displayInformationsLoop(displayObj) { 
-	console.log(displayObj);
 	for (const key in displayObj) { 
 		$('.parent-result-block.' + key + ' .name strong').text(displayObj[key]['name']);
 		$('.parent-result-block.' + key + ' img').attr('src', websiteUrl + '/' + displayObj[key]['specie']['image']);

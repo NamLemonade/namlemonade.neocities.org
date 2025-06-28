@@ -1,0 +1,20 @@
+---
+layout: master/base.njk
+permalink: blog.html
+title: My blog | Nam Lemonade's Website
+---
+
+<div class="col-12">
+	<div class="content">
+		<div class="content-content">
+			<div class="text">
+				<h1>Blog</h1>
+
+				<p>Occasional thoughts from me to you.</p>
+
+				<a href="blog/2025/list.html" class="btn">2025</a>
+
+			</div>
+		</div>
+	</div>
+</div>
