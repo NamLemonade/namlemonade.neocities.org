@@ -24,7 +24,7 @@ contentPageClass: polaroid
 
     			<div class="row align-items-center">
     				<div class="col-12 py-3 text-center">
-    					<p><em>If you're here, you're probably on the land theme. If you want to see the page for Reef the cyberdolphin, check <a href="reef.html">here</a>.</em></p>
+    					<p><em>If you're here, you're probably on the land theme. If you want to see the page for Rose Carter the cyberdolphin, check <a href="rose.html">here</a>.</em></p>
     				</div>
     				<div class="col-12 col-lg-6 col-xl-8 py-3">
     					<p>Polaroid, or Polly, started put as a random villager I made myself on the
