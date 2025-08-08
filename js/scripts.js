@@ -2,6 +2,8 @@
 // 	new cursoreffects.rainbowCursor();
 // });
 
+// $('.featherlight').featherlight();
+
 var cursorEffect;
 var themesArray = ['theme-land', 'theme-sea'];
 

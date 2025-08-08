@@ -85,6 +85,9 @@ title: About me | Nam Lemonade's Website
     								updated as much as possible</p>
     							<div
     								class="rainbow-interests d-flex align-items-center flex-wrap justify-content-center">
+    								<p class="p-2 mb-0 text-center"><strong>Beyoncé</strong></p>
+    								<p class="p-2 mb-0 text-center"><strong>Tyler the Creator</strong></p>
+    								<p class="p-2 mb-0 text-center"><strong>Just, a lot of music really! I love music!</strong></p>
     								<p class="p-2 mb-0 text-center"><strong>Pokémon</strong></p>
     								<p class="p-2 mb-0 text-center"><strong>Sonic the Hedgehog</strong>
     								</p>

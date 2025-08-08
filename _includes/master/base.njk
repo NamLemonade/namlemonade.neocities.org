@@ -42,6 +42,7 @@ displayFooter: true
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
 	<!-- Old Cursors -->
 	<script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css" integrity="sha512-DKdRaC0QGJ/kjx0U0TtJNCamKnN4l+wsMdION3GG0WVK6hIoJ1UPHRHeXNiGsXdrmq19JJxgIubb/Z7Og2qJww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- Custom style sheet -->
 	<link rel="stylesheet" href="https://furryring.neocities.org/onionring.css">
 	<script src="https://kit.fontawesome.com/d5faa113aa.js" crossorigin="anonymous"></script>
@@ -111,6 +112,9 @@ displayFooter: true
 								<div class="col-auto text-center">
 									<a href="{{ pathToGoTo }}blog.html">Blog</a>
 								</div>
+								<div class="col-auto text-center">
+									<a href="{{ pathToGoTo }}wplace.html">WPlace stuff</a>
+								</div>
 								{# <div class="col-auto text-center">
 									<a href="{{ pathToGoTo }}sitemap.html">Sitemap</a>
 								</div> #}
@@ -177,6 +181,14 @@ displayFooter: true
 	<!-- script dot js -->
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
 		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js" integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		lightbox.option({
+		'wrapAround': true,
+		'disableScrolling': true,
+		'alwaysShowNavOnTouchDevices': true
+		})
+	</script>
 	{% if script %}
 		<script src="{{ script }}"></script>
 	{% endif %}
