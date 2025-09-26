@@ -4,7 +4,7 @@ $light: #fff;
 $blue: #0360df;
 
 html {
-	&.theme-sea {
+	&.theme-green {
 		/* Track */
 		::-webkit-scrollbar-track {
 			background: $light;
@@ -63,7 +63,7 @@ html {
 		}
 
 		body {
-			background-image: url('../images/aero-background.jpg');
+			background-image: url('../images/green-aero.jpg');
 			cursor: url('../images/cursor/Alternate.png'), auto;
 
 			a {
@@ -264,19 +264,19 @@ html {
 					}
 					.pagedoll {
 						left: -65px;
-						img:not(.sea) {
+						img:not(.green) {
 							display: none;
 						}
-						.sea {
+						.green {
 							display: block;
 						}
 					}
 					.content-content {
 						.land,
-						.green {
+						.sea {
 							display: none;
 						}
-						.sea {
+						.green {
 							display: block;
 						}
 					}
@@ -307,10 +307,10 @@ html {
 
 			footer {
 				.footer-curve {
-					&.sea {
+					&.green {
 						display: block;
 					}
-					&.land {
+					&:not(.green) {
 						display: none;
 					}
 				}
@@ -327,7 +327,7 @@ html {
 				}
 
 				.footer-content {
-					background: linear-gradient(#b8e8fc, #78b3cc);
+					background: linear-gradient(#74ba63, #1e7508);
 				}
 			}
 		}

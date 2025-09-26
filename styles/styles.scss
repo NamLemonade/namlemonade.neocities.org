@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use '_theme-land';
 @use '_theme-sea';
+@use '_theme-green';
 /*Welcome to the CSS file!*/
 
 /* Vars */
@@ -386,6 +387,7 @@ table {
 			top: 50%;
 			left: 0;
 			transform: translateY(-50%);
+			z-index: 5;
 
 			max-height: 400px;
 			height: 100%;
@@ -412,6 +414,8 @@ table {
 			right: -20px;
 			width: 100%;
 			max-width: 150px;
+
+			z-index: 5;
 
 			animation: floatCloud 2.65s ease-in-out infinite alternate;
 			-webkit-animation: floatCloud 2.65s ease-in-out infinite alternate;

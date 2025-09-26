@@ -425,7 +425,7 @@ html {
 						.land {
 							display: block;
 						}
-						.sea {
+						img:not(.land) {
 							display: none;
 						}
 					}
@@ -433,7 +433,8 @@ html {
 						.land {
 							display: block;
 						}
-						.sea {
+						.sea,
+						.green {
 							display: none;
 						}
 					}
@@ -470,7 +471,7 @@ html {
 
 			footer {
 				.footer-curve {
-					&.sea {
+					&:not(.land) {
 						display: none;
 					}
 					&.land {
