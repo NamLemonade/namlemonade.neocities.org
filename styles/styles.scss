@@ -935,6 +935,140 @@ table {
 	}
 }
 
+.ocs-folders-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+
+	.oc-folder {
+		box-shadow: 0px 0px 7px rgba(33, 150, 243, 0.3);
+		border-radius: 10px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.3s ease;
+		text-align: center;
+
+		i {
+			font-size: 50px;
+			margin-bottom: 15px;
+
+			&.fa-folder-closed {
+				display: block;
+			}
+			&.fa-folder-open {
+				display: none;
+			}
+		}
+
+		span {
+			font-weight: 500;
+		}
+
+		&:hover {
+			transform: scale(1.05);
+			i {
+				&.fa-folder-closed {
+					display: none;
+				}
+				&.fa-folder-open {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.ocs-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+}
+.oc-block {
+	position: relative;
+	aspect-ratio: 1;
+	border-radius: 30px;
+	overflow: hidden;
+
+	&:hover {
+		img {
+			transform: scale(1.05);
+		}
+	}
+
+	.name {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		border-radius: 2000px;
+		padding: 5px 20px;
+		text-align: center;
+		z-index: 6;
+		background: rgba(#fff, 0.7);
+		font-size: clamp(12px, 3vw, 15px);
+		font-weight: 500;
+	}
+
+	img {
+		transition: transform 0.3s ease;
+	}
+
+	.glare {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 30%;
+		z-index: 5;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 50%;
+			opacity: 0.5;
+		}
+
+		&:before {
+			top: 0;
+			background: white;
+		}
+		&:after {
+			top: 50%;
+			background: white;
+			border-bottom-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+		}
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		box-shadow: inset 0 0 50px black;
+		z-index: 4;
+	}
+}
+
+.oc-page {
+	.oc-block {
+		max-width: 250px;
+		&:hover {
+			img {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
 footer {
 	margin-top: auto;
 	.footer-curve {
@@ -998,6 +1132,13 @@ footer {
 			}
 		}
 	}
+
+	.ocs-folders-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.ocs-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media only screen and (max-width: 767px) {
@@ -1026,5 +1167,16 @@ footer {
 				width: 100%;
 			}
 		}
+	}
+
+	.ocs-folders-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ocs-grid {
+		grid-template-columns: 1fr;
+	}
+	.oc-block {
+		border-radius: 15px;
 	}
 }

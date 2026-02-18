@@ -1,0 +1,31 @@
+---
+layout: master/base.njk
+permalink: ocs/fursonas.html
+title: Fursonas | My characters | Nam Lemonade's Website
+pathToGoTo: ../
+---
+
+<div class="col-12">
+	<div class="content">
+		<div class="content-content">
+			<div class="text">
+				<div class="mb-3">
+					<a href="../ocs.html"><i class="fas fa-arrow-left me-2"></i> Back to characters</a>
+				</div>
+				<h1>My fursonas</h1>
+				<p>Furries, anthros, however you want to call them.</p>
+
+				<div class="ocs-grid">
+					{% for oc in collections.ocFursona | reverse %}
+						<div class="oc-block">
+							<div class="glare"></div>
+							<a href="{{ oc.url }}" class="link-overflow"></a>
+							<img class="img-bg" src="{{ pathToGoTo }}{{ oc.data.thumb }}" alt="{{ oc.data.name }}" />
+							<span class="name">{{ oc.data.name }}</span>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

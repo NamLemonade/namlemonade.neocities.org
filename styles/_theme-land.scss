@@ -92,6 +92,11 @@ html {
 			}
 		}
 
+		.oc-folder {
+			background: $light;
+			color: color.adjust($blue, $lightness: -20%);
+		}
+
 		body {
 			background-image: url('../images/background.png');
 

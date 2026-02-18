@@ -36,7 +36,10 @@ html {
 						color: $blue;
 						background-color: #0360df;
 						background-image: radial-gradient(75% 50% at 50% 0%, #f4feff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #8de3fc, transparent);
-						box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+						box-shadow:
+							inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+							0 1px 4px 1px rgba(17, 110, 231, 0.2),
+							0 1px 4px 1px rgba(0, 0, 0, 0.1);
 						text-shadow: 0 1px 1px #116ee7;
 						color: $light;
 						transition: transform 0.3s ease;
@@ -62,6 +65,11 @@ html {
 			}
 		}
 
+		.oc-folder {
+			background: $light;
+			color: $darkblue;
+		}
+
 		body {
 			background-image: url('../images/aero-background.jpg');
 			cursor: url('../images/cursor/Alternate.png'), auto;
@@ -80,7 +88,10 @@ html {
 			.btn {
 				background-color: #0360df;
 				background-image: radial-gradient(75% 50% at 50% 0%, #f4feff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #8de3fc, transparent);
-				box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+				box-shadow:
+					inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+					0 1px 4px 1px rgba(17, 110, 231, 0.2),
+					0 1px 4px 1px rgba(0, 0, 0, 0.1);
 				text-shadow: 0 1px 1px #116ee7;
 				color: $light;
 				transition: transform 0.3s ease;
@@ -91,7 +102,10 @@ html {
 					animation: unset;
 					background-color: #0360df;
 					background-image: radial-gradient(75% 50% at 50% 0%, #f4feff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #8de3fc, transparent);
-					box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+					box-shadow:
+						inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+						0 1px 4px 1px rgba(17, 110, 231, 0.2),
+						0 1px 4px 1px rgba(0, 0, 0, 0.1);
 					text-shadow: 0 1px 1px #116ee7;
 					color: $light;
 					transition: transform 0.3s ease;
@@ -125,7 +139,10 @@ html {
 					th {
 						background-color: #0360df;
 						background-image: radial-gradient(75% 50% at 50% 0%, #f4feff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #8de3fc, transparent);
-						box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+						box-shadow:
+							inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+							0 1px 4px 1px rgba(17, 110, 231, 0.2),
+							0 1px 4px 1px rgba(0, 0, 0, 0.1);
 						text-shadow: 0 1px 1px #116ee7;
 						color: $light;
 						position: relative;
@@ -183,7 +200,10 @@ html {
 					.navbar-header {
 						background-color: #0360df;
 						background-image: radial-gradient(75% 50% at 50% 0%, #f4feff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #8de3fc, transparent);
-						box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+						box-shadow:
+							inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+							0 1px 4px 1px rgba(17, 110, 231, 0.2),
+							0 1px 4px 1px rgba(0, 0, 0, 0.1);
 						text-shadow: 0 1px 1px #116ee7;
 						color: $light;
 						position: relative;
@@ -219,7 +239,10 @@ html {
 					.block {
 						background-color: #eff6ff;
 						background-image: radial-gradient(75% 50% at 50% 0%, #ffffff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #dff0fb, transparent);
-						box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+						box-shadow:
+							inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+							0 1px 4px 1px rgba(17, 110, 231, 0.2),
+							0 1px 4px 1px rgba(0, 0, 0, 0.1);
 
 						&.changelog {
 							.block-content {
@@ -241,7 +264,10 @@ html {
 						.block-head {
 							background-color: #0360df;
 							background-image: radial-gradient(75% 50% at 50% 0%, #f4feff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #8de3fc, transparent);
-							box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+							box-shadow:
+								inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+								0 1px 4px 1px rgba(17, 110, 231, 0.2),
+								0 1px 4px 1px rgba(0, 0, 0, 0.1);
 							text-shadow: 0 1px 1px #116ee7;
 							color: $light;
 							position: relative;
@@ -285,7 +311,10 @@ html {
 				.content-content {
 					background-color: #eff6ff;
 					background-image: radial-gradient(75% 50% at 50% 0%, #ffffff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #dff0fb, transparent);
-					box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+					box-shadow:
+						inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+						0 1px 4px 1px rgba(17, 110, 231, 0.2),
+						0 1px 4px 1px rgba(0, 0, 0, 0.1);
 
 					.block {
 						background: $light;
@@ -293,7 +322,10 @@ html {
 						.block-head {
 							background-color: #0360df;
 							background-image: radial-gradient(75% 50% at 50% 0%, #f4feff 12%, transparent), radial-gradient(75% 50% at 50% 85%, #8de3fc, transparent);
-							box-shadow: inset 0 0 2px 1px rgba(255, 255, 255, 0.2), 0 1px 4px 1px rgba(17, 110, 231, 0.2), 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+							box-shadow:
+								inset 0 0 2px 1px rgba(255, 255, 255, 0.2),
+								0 1px 4px 1px rgba(17, 110, 231, 0.2),
+								0 1px 4px 1px rgba(0, 0, 0, 0.1);
 							text-shadow: 0 1px 1px #116ee7;
 							color: $light;
 							position: relative;
