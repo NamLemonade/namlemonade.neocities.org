@@ -75,7 +75,8 @@ html {
 			cursor: url('../images/cursor/Alternate.png'), auto;
 
 			a {
-				&:hover {
+				&:hover,
+				&:active {
 					cursor: url('../images/cursor/Link.png'), auto;
 				}
 			}

@@ -1060,13 +1060,95 @@ table {
 
 .oc-page {
 	.oc-block {
-		max-width: 250px;
 		&:hover {
 			img {
 				transform: scale(1);
 			}
 		}
 	}
+
+	.clickable-image {
+		overflow: hidden;
+		border-radius: 20px;
+		img {
+			transition: transform 0.3s ease;
+			border-radius: 0px;
+		}
+		&:hover {
+			img {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	.gallery-row {
+		.image {
+			position: relative;
+			aspect-ratio: 1;
+			border-radius: 30px !important;
+
+			img {
+				transition: transform 0.3s ease;
+			}
+
+			.glare {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 30%;
+				z-index: 5;
+
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					height: 50%;
+					opacity: 0.5;
+				}
+
+				&:before {
+					top: 0;
+					background: white;
+				}
+				&:after {
+					top: 50%;
+					background: white;
+					border-bottom-left-radius: 50%;
+					border-bottom-right-radius: 50%;
+				}
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				box-shadow: inset 0 0 50px black;
+				z-index: 4;
+			}
+		}
+	}
+}
+
+.img-bg {
+	height: 100%;
+	max-width: 100%;
+	-o-object-position: center;
+	object-position: center;
+	object-fit: cover;
+	width: 100%;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: all 0.6s;
 }
 
 footer {
