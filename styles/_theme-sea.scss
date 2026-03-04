@@ -72,12 +72,14 @@ html {
 
 		body {
 			background-image: url('../images/aero-background.jpg');
-			cursor: url('../images/cursor/Alternate.png'), auto;
+			// cursor: url('../images/cursor/Alternate.png'), auto;
+			cursor: url('../images/cursor/blue-aero-cursors/Arrow.cur'), auto;
 
 			a {
 				&:hover,
 				&:active {
-					cursor: url('../images/cursor/Link.png'), auto;
+					// cursor: url('../images/cursor/Link.png'), auto;
+					cursor: url('../images/cursor/blue-aero-cursors/Link.cur'), auto;
 				}
 			}
 

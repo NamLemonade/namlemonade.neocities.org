@@ -34,6 +34,7 @@ title: Credits and special thanks | Nam Lemonade's Website
 				<p><a href="https://www.11ty.dev" target="_blank">Eleventy</a> - For the templating system which is saving my life right now, I don't have to copy-paste the same shit over and over again!</p>
 				<p><a href="https://websetsbylynn.neocities.org/88x31-button-maker/" target="_blank">88x31 button generator</a> - For helping me make the buttons to switch themes</p>
 				<p><a href="https://vgen.co/kristophwhy/product/tenna-cursor/fef514d7-7275-4b90-bbec-c441c30021b2" target="_blank">Kristophwhy's Tenna cursor</a> - If you're on the water theme of this website, you'll know why. :P Tenna cursor!</p>
+				<p><a href="http://www.rw-designer.com/user/6234" target="_blank">hlark324</a> - For the new water theme cursor!</p>
 				<h3 class="mt-5">Artists whose art is featured on this website</h3>
 				<p><strong>beetalzART</strong>, for the artwork in Polaroid's page</p>
 				<p><strong>Pac (tacorat)</strong>, for the artwork in Reef's page</p>

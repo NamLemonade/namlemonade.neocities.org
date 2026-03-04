@@ -1,0 +1,64 @@
+---
+layout: master/base.njk
+title: My characters | Nam Lemonade's Website
+pathToGoTo: ../
+---
+
+<div class="col-12">
+	<div class="content oc-page">
+		<div class="content-content">
+			<div class="text">
+				<div class="mb-3">
+					<a href="../{{ categoryLink }}"><i class="fas fa-arrow-left me-2"></i> Back to {{ category }}</a>
+				</div>
+				<div class="row align-items-center mb-5">
+					<div class="col-12 col-lg-4 p-3">
+						<div class="oc-block">
+							<div class="glare"></div>
+							<img class="img-bg" src="{{ pathToGoTo }}{{ thumb }}" alt="{{ name }}" />
+						</div>
+					</div>
+					<div class="col-12 col-lg-8 p-3">
+						<h2>{{ name }}</h2>
+						<p>{{ specie }}</p>
+						<p>{{ gender }}</p>
+						{% if design %}
+							<p>Design by <a href="{{ designLink }}" target="_blank">{{ design }}</a></p>
+						{% endif %}
+						{% if thumbArtist %}
+							<p>Icon art by <a href="{{ thumbArtistLink }}" target="_blank">{{ thumbArtist }}</a></p>
+						{% endif %}
+					</div>
+				</div>
+				
+				<div>
+					<div class="mb-5">
+						<h2 class="mb-3">Reference sheet(s)</h2>
+						<p>Click the images to see them in full view</p>
+						<div class="row align-items-center">
+                            {% for ref in references %}
+								<div class="col-12 {% if loop.length == 1 %}col-lg-12{% elseif loop.length == 2 %}col-lg-6{% else %}col-lg-4{% endif %} p-3">
+									<div class="image clickable-image box-shadow">
+										<a data-lightbox="refsheets" class="link-overflow" data-title="{{ ref.caption }}" href="{{ pathToGoTo }}images/ocs/{{ ref.image }}"></a>
+										<img src="{{ pathToGoTo }}images/ocs/{{ ref.image }}" alt="{{ ref.alt }}">
+									</div>
+								</div>
+                            {% endfor %}
+						</div>
+					</div>
+					<div class="mb-5">
+						<h2>Description</h2>
+						{{ content | safe }}
+					</div>
+					<div class="mb-5">
+						<h2>Art gallery</h2>
+						<p>View this character's full gallery on FurAffinity <a href="{{ FurAffinity }}" target="_blank">here!</a></p>
+					</div>
+					<div>
+						<a href="../{{ categoryLink }}"><i class="fas fa-arrow-left me-2"></i> Back to {{ category }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
